@@ -62,22 +62,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for the "Don Quixote" image
     document.getElementById("don-quixote-img").addEventListener('click', function(){
-        ajax('data/cervantes-data.html');
+        ajax('data/book-data.xml', 0); // Load the data from the XML file and extract the first book (index 0)
         setAllImageOpacities(); // Set opacity of all images to 0.5
-        this.style.opacity = '1';
+        this.style.opacity = '1'; // Change opacity of the clicked image to 1
     });
 
     // Event listener for the "A Tale of Two Cities" image
     document.getElementById("two-cities-img").addEventListener('click', function(){
-        ajax('data/dickens-data.html');
+        ajax('data/book-data.xml', 1); // Load the data from the XML file and extract the second book (index 1)
         setAllImageOpacities(); // Set opacity of all images to 0.5
-        this.style.opacity = '1';
+        this.style.opacity = '1'; // Change opacity of the clicked image to 1
     });
 
     // Event listener for the "The Lord of the Rings" image
     document.getElementById("lotr-img").addEventListener('click', function(){
-        ajax('data/tolkien-data.html');
+        ajax('data/book-data.xml', 2); // Load the data from the XML file and extract the third book (index 2)
         setAllImageOpacities(); // Set opacity of all images to 0.5
-        this.style.opacity = '1';
+        this.style.opacity = '1'; // Change opacity of the clicked image to 1
     });
 });
