@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Function to change opacity of all images to 0.5
     function setAllImageOpacities() {
-        var images = document.getElementsByTagName('img');
+        var images = document.querySelectorAll('.book-layout img');
         for (var i = 0; i < images.length; i++) {
             images[i].style.opacity = '0.5';
         }
@@ -15,10 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
         var xhr = new XMLHttpRequest();
 
         xhr.onload = function() {
-            if (xhr.status === 200) {
-                document.getElementById("details").innerHTML = xhr.responseText;
-            } else {
-                console.error("Error:", xhr.statusText);
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    document.getElementById("details").innerHTML = xhr.responseText;
+                } else {
+                    console.error("Error:", xhr.statusText);
+                }
             }
         };
 
